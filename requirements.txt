@@ -1,0 +1,11 @@
+einops
+scikit-image
+natsort
+opencv-contrib-python
+opencv-python
+timm
+bsrgan
+imutils==0.5.4
+torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu111
+lpips
+torch
