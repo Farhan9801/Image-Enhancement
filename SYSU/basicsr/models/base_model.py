@@ -12,7 +12,7 @@ logger = logging.getLogger('basicsr')
 
 
 class BaseModel():
-    """Base model."""
+    """Base model_low_light."""
 
     def __init__(self, opt):
         self.opt = opt
@@ -133,7 +133,7 @@ class BaseModel():
                 f'Scheduler {scheduler_type} is not implemented yet.')
 
     def get_bare_model(self, net):
-        """Get bare model, especially under wrapping with
+        """Get bare model_low_light, especially under wrapping with
         DistributedDataParallel or DataParallel.
         """
         if isinstance(net, (DataParallel, DistributedDataParallel)):
@@ -251,7 +251,7 @@ class BaseModel():
             It also ignore these keys with different sizes (not load).
 
         Args:
-            crt_net (torch model): Current network.
+            crt_net (torch model_low_light): Current network.
             load_net (dict): Loaded network.
             strict (bool): Whether strictly loaded. Default: True.
         """
@@ -291,7 +291,7 @@ class BaseModel():
         """
         net = self.get_bare_model(net)
         logger.info(
-            f'Loading {net.__class__.__name__} model from {load_path}.')
+            f'Loading {net.__class__.__name__} model_low_light from {load_path}.')
         load_net = torch.load(
             load_path, map_location=lambda storage, loc: storage)
         if param_key is not None:

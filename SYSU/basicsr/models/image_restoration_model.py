@@ -51,7 +51,7 @@ class Mixing_Augment:
 
 
 class ImageCleanModel(BaseModel):
-    """Base Deblur model for single image deblur."""
+    """Base Deblur model_low_light for single image deblur."""
 
     def __init__(self, opt):
         super(ImageCleanModel, self).__init__(opt)
@@ -92,7 +92,7 @@ class ImageCleanModel(BaseModel):
             # There is no need to wrap with DistributedDataParallel
             self.net_g_ema = define_network(self.opt['network_g']).to(
                 self.device)
-            # load pretrained model
+            # load pretrained model_low_light
             load_path = self.opt['path'].get('pretrain_network_g', None)
             if load_path is not None:
                 self.load_network(self.net_g_ema, load_path,

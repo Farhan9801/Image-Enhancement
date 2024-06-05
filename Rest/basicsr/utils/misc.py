@@ -152,7 +152,7 @@ def check_resume(opt, resume_iter):
         if flag_pretrain:
             logger.warning(
                 'pretrain_network path will be ignored during resuming.')
-        # set pretrained model paths
+        # set pretrained model_low_light paths
         for network in networks:
             name = f'pretrain_{network}'
             basename = network.replace('network_', '')

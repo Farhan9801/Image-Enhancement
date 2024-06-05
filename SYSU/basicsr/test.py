@@ -41,7 +41,7 @@ def main():
             f"Number of test images in {dataset_opt['name']}: {len(test_set)}")
         test_loaders.append(test_loader)
 
-    # create model
+    # create model_low_light
     model = create_model(opt)
 
     for test_loader in test_loaders:

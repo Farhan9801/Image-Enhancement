@@ -28,7 +28,7 @@ def extract_inception_features(data_generator,
 
     Args:
         data_generator (generator): A data generator.
-        inception (nn.Module): Inception model.
+        inception (nn.Module): Inception model_low_light.
         len_generator (int): Length of the data_generator to show the
             progressbar. Default: None.
         device (str): Device. Default: cuda.

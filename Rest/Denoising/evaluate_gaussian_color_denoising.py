@@ -25,7 +25,7 @@ def proc(filename):
 
 parser = argparse.ArgumentParser(description='Gasussian Color Denoising using Restormer')
 
-parser.add_argument('--model_type', required=True, choices=['non_blind','blind'], type=str, help='blind: single model to handle various noise levels. non_blind: separate model for each noise level.')
+parser.add_argument('--model_type', required=True, choices=['non_blind','blind'], type=str, help='blind: single model_low_light to handle various noise levels. non_blind: separate model_low_light for each noise level.')
 parser.add_argument('--sigmas', default='15,25,50', type=str, help='Sigma values')
 
 args = parser.parse_args()

@@ -81,16 +81,16 @@ def niqe(img,
 
     For good performance, it is advisable by the official implemtation to
     divide the distorted image in to the same size patched as used for the
-    construction of multivariate Gaussian model.
+    construction of multivariate Gaussian model_low_light.
 
     Args:
         img (ndarray): Input image whose quality needs to be computed. The
             image must be a gray or Y (of YCbCr) image with shape (h, w).
             Range [0, 255] with float type.
         mu_pris_param (ndarray): Mean of a pre-defined multivariate Gaussian
-            model calculated on the pristine dataset.
+            model_low_light calculated on the pristine dataset.
         cov_pris_param (ndarray): Covariance of a pre-defined multivariate
-            Gaussian model calculated on the pristine dataset.
+            Gaussian model_low_light calculated on the pristine dataset.
         gaussian_window (ndarray): A 7x7 Gaussian window used for smoothing the
             image.
         block_size_h (int): Height of the blocks in to which image is divided.
@@ -139,7 +139,7 @@ def niqe(img,
 
     distparam = np.concatenate(distparam, axis=1)
 
-    # fit a MVG (multivariate Gaussian) model to distorted patch features
+    # fit a MVG (multivariate Gaussian) model_low_light to distorted patch features
     mu_distparam = np.nanmean(distparam, axis=0)
     # use nancov. ref: https://ww2.mathworks.cn/help/stats/nancov.html
     distparam_no_nan = distparam[~np.isnan(distparam).any(axis=1)]

@@ -177,7 +177,7 @@ def main():
     result = create_train_val_dataloader(opt, logger)
     train_loader, train_sampler, val_loader, total_epochs, total_iters = result
 
-    # create model
+    # create model_low_light
     if resume_state:  # resume training
         check_resume(opt, resume_state['iter'])
         model = create_model(opt)
@@ -313,7 +313,7 @@ def main():
     consumed_time = str(
         datetime.timedelta(seconds=int(time.time() - start_time)))
     logger.info(f'End of training. Time consumed: {consumed_time}')
-    logger.info('Save the latest model.')
+    logger.info('Save the latest model_low_light.')
     model.save(epoch=-1, current_iter=-1)  # -1 stands for the latest
     if opt.get('val') is not None:
         model.validation(val_loader, current_iter, tb_logger,

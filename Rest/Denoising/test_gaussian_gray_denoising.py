@@ -23,7 +23,7 @@ parser = argparse.ArgumentParser(description='Gasussian Grayscale Denoising usin
 parser.add_argument('--input_dir', default='./Datasets/test/', type=str, help='Directory of validation images')
 parser.add_argument('--result_dir', default='./results/Gaussian_Gray_Denoising/', type=str, help='Directory for results')
 parser.add_argument('--weights', default='./pretrained_models/gaussian_gray_denoising', type=str, help='Path to weights')
-parser.add_argument('--model_type', required=True, choices=['non_blind','blind'], type=str, help='blind: single model to handle various noise levels. non_blind: separate model for each noise level.')
+parser.add_argument('--model_type', required=True, choices=['non_blind','blind'], type=str, help='blind: single model_low_light to handle various noise levels. non_blind: separate model_low_light for each noise level.')
 parser.add_argument('--sigmas', default='15,25,50', type=str, help='Sigma values')
 
 args = parser.parse_args()
